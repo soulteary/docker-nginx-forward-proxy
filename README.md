@@ -1,8 +1,8 @@
 # Docker Nginx Forward Proxy
 
-Perhaps the smallest nginx forward proxy server docker images.
-
 For Centrally manage application export traffic, A/B testing, etc.
+
+Perhaps the smallest nginx forward proxy server docker images.
 
 ## Usage
 
