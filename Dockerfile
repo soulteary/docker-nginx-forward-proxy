@@ -1,14 +1,14 @@
 FROM nginx:1.19.6-alpine AS builder
 
 ARG NGINX_VERSION=1.19.6
-ARG CONNECT_VERSION=cb4dcd
+ARG CONNECT_VERSION=0.0.2
 ARG PACHER_VERSION=proxy_connect_rewrite_1018
 
 RUN apk add --no-cache --virtual .build-deps gcc libc-dev make openssl-dev pcre-dev zlib-dev linux-headers libxslt-dev gd-dev geoip-dev perl-dev libedit-dev mercurial bash alpine-sdk findutils
 
 RUN mkdir -p /usr/src && cd /usr/src && \
     curl -L "http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz" -o nginx.tar.gz && \
-    curl -L "https://github.com/soulteary/ngx_http_proxy_connect_module/archive/${CONNECT_VERSION}.tar.gz" -o ngx_http_proxy_connect_module.tar.gz && \
+    curl -L "https://github.com/chobits/ngx_http_proxy_connect_module/archive/v${CONNECT_VERSION}.tar.gz" -o ngx_http_proxy_connect_module.tar.gz && \
     tar zxvf nginx.tar.gz && \
     tar zxvf ngx_http_proxy_connect_module.tar.gz && \
     cd /usr/src/nginx-1.19.6 && \
