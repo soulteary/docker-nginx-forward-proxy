@@ -1,7 +1,7 @@
-FROM nginx:1.19.6-alpine AS builder
+FROM nginx:1.27.0-alpine AS builder
 
-ARG NGINX_VERSION=1.19.6
-ARG CONNECT_VERSION=0.0.2
+ARG NGINX_VERSION=1.27.0
+ARG CONNECT_VERSION=0.0.6
 ARG PACHER_VERSION=proxy_connect_rewrite_1018
 
 RUN apk add --no-cache --virtual .build-deps gcc libc-dev make openssl-dev pcre-dev zlib-dev linux-headers libxslt-dev gd-dev geoip-dev perl-dev libedit-dev mercurial bash alpine-sdk findutils
