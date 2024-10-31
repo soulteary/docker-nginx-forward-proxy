@@ -1,0 +1,22 @@
+# fly.toml app configuration file generated for docker-nginx-forward-proxy on 2024-10-31T18:53:30Z
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'docker-nginx-forward-proxy'
+primary_region = 'lhr'
+
+[build]
+
+[http_service]
+  internal_port = 80
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
